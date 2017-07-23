@@ -1,0 +1,50 @@
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+label {display: inline-block; margin:0; font-size: 14px; margin-right: 4px;}
+
+input {width: 160px; padding: 5px; font-size: 14px; margin-right: 4px}
+.ni {width:267px} /* name input 32 chars */
+.ai {width:340px} /* address input 42 chars */
+
+button {font-size: 14px; padding: 5px;}
+
+h1 {font-size: 18px;margin-top:4px;}
+h2 {color: #00A; font-size: 16px; margin-bottom: 2px;}
+h3 {color: #AAA; font-size: 16px; margin-bottom: 0;}
+
+table {border-collapse: collapse;}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th,td {padding: 4px; font-size: 15px}
+th {font-weight:bold;}
+td {text-align:center}
+
+ul {margin:0;padding-left:12px;}
+li {font-size: 12px;}
+
+.fl {float: left;}
+.clear {clear: both;}
+
+.m0   {margin: 0;}
+.ml4  {margin-left: 4px;}
+.ml24 {margin-left: 24px;}
+
+.error {color: red; font-weight:bold;}
+
+.hide {display: none}
+
+button {
+  border-color:#00A;
+  border-style:solid;
+  border-width:1px;
+}
+button:disabled {
+  border-color: #dddddd;
+}

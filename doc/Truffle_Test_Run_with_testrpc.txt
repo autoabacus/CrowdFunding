@@ -1,0 +1,48 @@
+B9lab: ETH-8 Certified Online Ethereum Developer Course - January 2017
+Exam Project by AutoAbacus (David Hartley)
+
+Truffle Test Results 2017.06.03
+====================
+
+david@VM:~/Dapps/ExamProject$ truffle test
+Using network 'development'.
+
+Creating first project
+First project added. Gas used 1045231
+
+
+  Contract: FundingHub
+    ✓ Checking that there is a Project Id 1 after migration (86ms)
+    ✓ Adding a new Project target 12.1 ethers, deadline 1 second from now, which should be Id 2 (256ms)
+    ✓ Adding a new Project target 13.2 ethers, deadline 1 second from now, which should be Id 3 (187ms)
+    ✓ Making a contribution of 2.3 ethers to Project 2 by Account3 (252ms)
+    ✓ Making a contribution of 2.4 ethers to Project 2 by Account4 (235ms)
+    ✓ Making a contribution of 2.5 ethers to Project 2 by Account5 (219ms)
+    ✓ Adding a new Project target 14.3 ethers, deadline 1 hour from now, which should be Id 4 (201ms)
+    ✓ Making a contribution of 1.3 ethers to Project 4 by Account4 (276ms)
+    ✓ Making a contribution of 13.3 ethers to Project 4 by Account5 which should take the project to the TargetMet state (251ms)
+    ✓ Withdrawal of Contributed Funds from Project 4 by owner then checking that Project is in Funded state with zero balance and that owner received the funds (180ms)
+    ✓ Check that Project 3 has timed out with no contributions, and set it to Refunding state which should go straight to Closed (340ms)
+    ✓ Contribute another 2.6 ethers from Account 6 to Project 2, which should time out and the ethers be returned (194ms)
+    ✓ Do a pull refund from Project 2 of the 2.3 ethers from Account3 and check account plus project balances (390ms)
+    ✓ Do push refunding from Project 2 by FundingHub Owner of the other contributions as if pull refunding had stalled (122ms)
+
+
+  14 passing (3s)
+
+ContribA 0x1399ee0978c2d4b1400bc5a153d01e5588dadb29 Refund 2.40
+Push Refund gas used 41684
+ContribA 0x090bfe9724047dc984b26046bfc0fe168ed3264d Refund 2.50
+Push Refund gas used 52262
+ContribA 0x0000000000000000000000000000000000000000 Refund 0.00
+david@VM:~/Dapps/ExamProject$
+
+Notes
+=====
+• To replicate these results it may be necessary to restart testrpc.
+• One reason for that is that the refund and time out tests depend upon the project going over the minimum possible deadline time of 1 second from now at project creation time,
+  while contributions are being added. On a fast computer, and depending where in the second creation occurred, the 1 second may not tick over before the refund tests start.
+  If that happens try repeating the test run.
+• The log results at the end above are for the FundingHub Owner loop to push 2 refunds after doing one pull refund.
+  Other log entries were removed for final run because of how messily they appear vs the it() assert results.
+
