@@ -1,8 +1,6 @@
 <h3>B9lab: ETH-8 Certified Online Ethereum Developer Course - January 2017<br>
 Exam Project by AutoAbacus (David Hartley) started 2017.05.09, completed 2017.06.05</h3>
 
-<p>Repository url: https://git.academy.b9lab.com/ETH-8-exam-projects/autoabacus</p>
-
 <h3>Versions</h3>
 <p>Ubuntu 17.4 as guest running under Windows 10 host<br>
 Truffle: 3.2.4 with webpack 2.2.1 as installed by truffle init webpack<br>
